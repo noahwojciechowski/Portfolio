@@ -54,7 +54,7 @@ export const projects: Project[] = [
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
     features: ["Design moderne", "Responsive", "Animations fluides", "Carrousel projets", "Mode sombre"],
     githubUrl: "https://github.com/noahwojciechowski/portfolio",
-    liveUrl: "https://portfolio-noah-wojciechowski.vercel.app",
+    liveUrl: "https://noah-wojciechowski.vercel.app",
     technicalDetails: {
       architecture: [
         "Framework Next.js 14 avec App Router",
