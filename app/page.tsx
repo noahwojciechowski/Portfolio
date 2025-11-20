@@ -16,6 +16,7 @@ import Hero from "@/components/hero";
 import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import About from "@/components/about";
+import Contact from "@/components/contact";
 
 const CV_PATH = "/cv-livecampus-noah-wojciechowski.pdf";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <About />
+      <Contact />
       {/* ==================== CV LINK SECTION ==================== */}
       <div className="flex justify-center py-12 px-4">
         <a
