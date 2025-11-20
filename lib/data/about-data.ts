@@ -55,25 +55,25 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     type: "projet",
     title: "Nami Kumo",
-    period: "2024",
-    description: "Site web restaurant japonais avec système de réservation (React 19, TypeScript, Tailwind CSS)",
+    period: "2025",
+    description: "Site web restaurant japonais avec système de réservation (React, TypeScript, Tailwind CSS)",
   },
   {
     type: "projet",
     title: "QuizMaster",
-    period: "2024",
+    period: "2025",
     description: "Bot Discord de quiz quotidiens avec système de votes (JavaScript, Discord.js)",
   },
   {
     type: "projet",
     title: "TechVault",
-    period: "2024",
+    period: "2025",
     description: "Site e-commerce Tech & Gaming (React, TypeScript, Zustand)",
   },
   {
     type: "projet",
     title: "Portfolio Personnel",
-    period: "2024",
+    period: "2025",
     description: "Portfolio moderne et responsive (Next.js, TypeScript, shadcn/ui)",
   },
 ];

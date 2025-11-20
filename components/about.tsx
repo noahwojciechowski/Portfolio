@@ -44,9 +44,8 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ==================== HEADER ==================== */}
         <div
-          className={`mb-8 lg:mb-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 transition-all duration-700 ease-out ${
-            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-          }`}
+          className={`mb-8 lg:mb-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+            }`}
         >
           <h2 className="text-3xl sm:text-5xl font-bold text-white">À propos de moi</h2>
           <label className="relative inline-flex cursor-pointer items-center min-h-[44px]" aria-label="Basculer entre terminal et bento">
@@ -74,9 +73,8 @@ export default function About() {
 
         {/* ==================== CONTENT ==================== */}
         <div
-          className={`transition-all duration-700 ease-out ${
-            isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-          } delay-150`}
+          className={`transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+            } delay-150`}
         >
           {viewMode === "terminal" ? <TerminalView /> : <BentoView />}
         </div>
@@ -159,142 +157,219 @@ function TerminalView() {
 
 /**
  * Vue Bento - Cartes organisées de style bento
- * Affiche les informations dans des cartes visuelles structurées
+ * Affiche les informations avec un design sobre et épuré
  */
 function BentoView() {
   return (
     <div className="mx-auto max-w-6xl">
-      <div className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:gap-5 sm:grid-cols-2">
         {/* ==================== CARTE À PROPOS ==================== */}
-        <div className="rounded-lg p-4 sm:p-6" style={{ backgroundColor: "#262626" }}>
-          <div className="mb-4 flex items-center gap-3">
-            <Image src="/icons/bento/user.svg" alt="Icône utilisateur" width={24} height={24} className="brightness-0 invert" />
-            <h3 className="text-lg sm:text-xl font-bold text-white">{ABOUT_INFO.name}</h3>
-          </div>
-          <p className="text-xs sm:text-sm leading-relaxed text-gray-400">{ABOUT_INFO.description}</p>
-        </div>
+        <div className="group relative rounded-xl p-5 sm:p-6 bg-gradient-to-br from-gray-950/95 via-black/95 to-gray-950/95 backdrop-blur-sm border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:-translate-y-1">
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-        {/* ==================== CARTE EXPÉRIENCE ==================== */}
-        <div className="rounded-lg p-4 sm:p-6" style={{ backgroundColor: "#262626" }}>
-          <div className="mb-4 flex items-center gap-3">
-            <Image src="/icons/bento/briefcase.svg" alt="Icône expérience" width={24} height={24} className="brightness-0 invert" />
-            <h3 className="text-lg sm:text-xl font-bold text-white">Expérience</h3>
-          </div>
-          <div className="text-xs sm:text-sm text-gray-400">
-            <p className="mt-5 mb-2 font-semibold text-gray-300">
-              Voici les différentes expériences professionnelles et projets réalisés durant mes études:
-            </p>
-            <ul className="list-inside list-disc space-y-1 text-gray-400">
-              {EXPERIENCES.filter((exp: ExperienceItem) => exp.type === "stage").map((exp: ExperienceItem, idx: number) => (
-                <li key={idx}>
-                  Stage : {exp.title} ({exp.period}) - {exp.description}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-5 mb-2 font-semibold text-gray-300">Projets d&apos;études :</p>
-            <ul className="list-inside list-disc space-y-1 text-gray-400">
-              {EXPERIENCES.filter((exp: ExperienceItem) => exp.type === "projet").map((exp: ExperienceItem, idx: number) => (
-                <li key={idx}>
-                  {exp.title} - {exp.description}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* ==================== CARTE COMPÉTENCES ==================== */}
-        <div className="rounded-lg p-4 sm:p-6 order-3 sm:order-3 lg:order-3" style={{ backgroundColor: "#262626" }}>
-          <div className="mb-4 flex items-center gap-3">
-            <Image src="/icons/bento/sourcecode.svg" alt="Icône compétences" width={24} height={24} className="brightness-0 invert" />
-            <h3 className="text-lg sm:text-xl font-bold text-white">Compétences</h3>
-          </div>
-          <div className="space-y-3 text-xs sm:text-sm text-gray-400">
-            {SKILL_CATEGORIES.map((category: SkillCategory, idx: number) => (
-              <div key={idx}>
-                <p className="font-semibold text-white">{category.name}</p>
-                <p className="text-gray-400">{category.items.join(", ")}</p>
+          <div className="relative z-10">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-gray-700/50 group-hover:bg-gray-600/50 transition-colors">
+                <Image src="/icons/bento/user.svg" alt="Icône utilisateur" width={20} height={20} className="brightness-0 invert" />
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* ==================== CARTE FORMATION ==================== */}
-        <div className="rounded-lg p-4 sm:p-6 order-4 sm:order-4 lg:order-4" style={{ backgroundColor: "#262626" }}>
-          <div className="mb-4 flex items-center gap-3">
-            <Image src="/icons/bento/book.svg" alt="Icône formation" width={24} height={24} className="brightness-0 invert" />
-            <h3 className="text-lg sm:text-xl font-bold text-white">Formation</h3>
-          </div>
-          <div className="space-y-3 text-xs sm:text-sm text-gray-400">
-            {EDUCATION.map((edu: EducationItem, idx: number) => (
-              <div key={idx}>
-                <p className="font-semibold text-white">{edu.diploma}</p>
-                <p className="text-gray-400">
-                  {edu.school} ({edu.year})
-                </p>
-              </div>
-            ))}
+              <h3 className="text-lg sm:text-xl font-bold text-white">{ABOUT_INFO.name}</h3>
+            </div>
+            <p className="text-sm leading-relaxed text-gray-300">{ABOUT_INFO.description}</p>
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-700/50 border border-gray-600">
+              <span className="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+              <span className="text-xs font-medium text-gray-200">Disponible</span>
+            </div>
           </div>
         </div>
 
         {/* ==================== CARTE CONTACT ==================== */}
-        <div
-          className="rounded-lg p-4 sm:p-6 lg:p-5 sm:col-span-2 lg:col-span-1 lg:col-start-3 lg:row-span-2 lg:row-start-1 flex flex-col order-last sm:order-last"
-          style={{ backgroundColor: "#262626" }}
-        >
-          <div className="mb-4 lg:mb-5 flex items-center gap-3">
-            <Image src="/icons/bento/mail.svg" alt="Icône contact" width={24} height={24} className="brightness-0 invert" />
-            <h3 className="text-lg sm:text-xl font-bold text-white">Contact</h3>
+        <div className="group relative rounded-xl p-5 sm:p-6 bg-gradient-to-br from-gray-950/95 via-black/95 to-gray-950/95 backdrop-blur-sm border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:-translate-y-1">
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+          <div className="relative z-10 flex flex-col h-full">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-gray-700/50 group-hover:bg-gray-600/50 transition-colors">
+                <Image src="/icons/bento/mail.svg" alt="Icône contact" width={20} height={20} className="brightness-0 invert" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-white">Contact</h3>
+            </div>
+
+            <div className="flex flex-col gap-3 flex-1">
+              {/* Email */}
+              <a
+                href={`mailto:${CONTACT_INFO.email}`}
+                className="group/item relative overflow-hidden flex items-center gap-3 rounded-lg p-3.5 bg-gray-800/50 border border-gray-700/30 hover:border-gray-600 transition-all hover:bg-gray-700/50 hover:scale-[1.02]"
+                aria-label={`Envoyer un email à ${CONTACT_INFO.email}`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent translate-x-[-100%] group-hover/item:translate-x-0 transition-transform duration-300"></div>
+                <div className="relative flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-gray-700/50">
+                  <Image src="/icons/contact/mailopen.svg" alt="Email" width={16} height={16} className="brightness-0 invert" />
+                </div>
+                <div className="relative flex-1 min-w-0">
+                  <p className="font-semibold text-white text-sm mb-0.5">Email</p>
+                  <p className="text-xs text-gray-400 truncate">{CONTACT_INFO.email}</p>
+                </div>
+              </a>
+
+              {/* GitHub */}
+              <a
+                href={CONTACT_INFO.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/item relative overflow-hidden flex items-center gap-3 rounded-lg p-3.5 bg-gray-800/50 border border-gray-700/30 hover:border-gray-600 transition-all hover:bg-gray-700/50 hover:scale-[1.02]"
+                aria-label="Visiter le profil GitHub"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent translate-x-[-100%] group-hover/item:translate-x-0 transition-transform duration-300"></div>
+                <div className="relative flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-gray-700/50">
+                  <Image src="/icons/contact/github.svg" alt="GitHub" width={16} height={16} className="brightness-0 invert" />
+                </div>
+                <div className="relative flex-1 min-w-0">
+                  <p className="font-semibold text-white text-sm mb-0.5">GitHub</p>
+                  <p className="text-xs text-gray-400 truncate">@noahwojciechowski</p>
+                </div>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href={CONTACT_INFO.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/item relative overflow-hidden flex items-center gap-3 rounded-lg p-3.5 bg-gray-800/50 border border-gray-700/30 hover:border-gray-600 transition-all hover:bg-gray-700/50 hover:scale-[1.02]"
+                aria-label="Visiter le profil LinkedIn"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent translate-x-[-100%] group-hover/item:translate-x-0 transition-transform duration-300"></div>
+                <div className="relative flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-gray-700/50">
+                  <Image src="/icons/contact/linkedin.svg" alt="LinkedIn" width={16} height={16} className="brightness-0 invert" />
+                </div>
+                <div className="relative flex-1 min-w-0">
+                  <p className="font-semibold text-white text-sm mb-0.5">LinkedIn</p>
+                  <p className="text-xs text-gray-400 truncate">noahwojciechowski</p>
+                </div>
+              </a>
+            </div>
           </div>
-          <div className="flex flex-col gap-4 sm:gap-4 sm:grid sm:grid-cols-3 lg:grid-cols-1 lg:flex lg:flex-col flex-1 lg:gap-6 lg:justify-center">
-            {/* Email */}
-            <a
-              href={`mailto:${CONTACT_INFO.email}`}
-              className="flex items-center gap-3 rounded-lg p-3 lg:p-4 transition-all hover:bg-gray-700/80 hover:scale-[1.02] border border-gray-700/50 lg:border-gray-700/30"
-              aria-label={`Envoyer un email à ${CONTACT_INFO.email}`}
-            >
-              <div className="flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-lg">
-                <Image src="/icons/contact/mailopen.svg" alt="Email" width={20} height={20} className="brightness-0 invert" />
+        </div>
+
+        {/* ==================== CARTE COMPÉTENCES ==================== */}
+        <div className="group relative rounded-xl p-5 sm:p-6 bg-gradient-to-br from-gray-950/95 via-black/95 to-gray-950/95 backdrop-blur-sm border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:-translate-y-1">
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+          <div className="relative z-10">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-gray-700/50 group-hover:bg-gray-600/50 transition-colors">
+                <Image src="/icons/bento/sourcecode.svg" alt="Icône compétences" width={20} height={20} className="brightness-0 invert" />
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold text-gray-300 text-sm lg:text-base mb-0.5">Email</p>
-                <p className="text-xs lg:text-sm text-gray-400 truncate">{CONTACT_INFO.email}</p>
+              <h3 className="text-lg sm:text-xl font-bold text-white">Compétences</h3>
+            </div>
+            <div className="space-y-4 text-sm">
+              {SKILL_CATEGORIES.map((category: SkillCategory, idx: number) => (
+                <div key={idx}>
+                  <p className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="w-1 h-4 rounded bg-gray-500"></span>
+                    {category.name}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {category.items.map((item, itemIdx) => (
+                      <span
+                        key={itemIdx}
+                        className="px-2.5 py-1 rounded-md bg-gray-800/80 border border-gray-600/50 text-gray-300 text-xs hover:bg-gray-700/80 hover:border-gray-500 hover:text-white transition-all cursor-default"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ==================== CARTE FORMATION ==================== */}
+        <div className="group relative rounded-xl p-5 sm:p-6 bg-gradient-to-br from-gray-950/95 via-black/95 to-gray-950/95 backdrop-blur-sm border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:-translate-y-1">
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+          <div className="relative z-10">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-gray-700/50 group-hover:bg-gray-600/50 transition-colors">
+                <Image src="/icons/bento/book.svg" alt="Icône formation" width={20} height={20} className="brightness-0 invert" />
               </div>
-            </a>
-            {/* GitHub */}
-            <a
-              href={CONTACT_INFO.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-lg p-3 lg:p-4 transition-all hover:bg-gray-700/80 hover:scale-[1.02] border border-gray-700/50 lg:border-gray-700/30"
-              aria-label="Visiter le profil GitHub"
-            >
-              <div className="flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-lg">
-                <Image src="/icons/contact/github.svg" alt="GitHub" width={20} height={20} className="brightness-0 invert" />
+              <h3 className="text-lg sm:text-xl font-bold text-white">Formation</h3>
+            </div>
+            <div className="space-y-3 text-sm">
+              {EDUCATION.map((edu: EducationItem, idx: number) => (
+                <div key={idx} className="p-3 rounded-lg bg-gray-800/50 border border-gray-700/30 hover:border-gray-600 hover:bg-gray-700/50 transition-all">
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="font-semibold text-white">{edu.diploma}</p>
+                    <span className="px-2 py-0.5 rounded text-xs bg-gray-700/50 border border-gray-600 text-gray-300">
+                      {edu.year}
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-400">{edu.school}</p>
+                </div>
+              ))}
+              <div className="mt-4 p-3 rounded-lg bg-gray-800/80 border border-gray-600">
+                <p className="text-xs font-medium text-gray-200">
+                  Recherche alternance LiveCampus • Janvier 2026
+                </p>
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold text-gray-300 text-sm lg:text-base mb-0.5">GitHub</p>
-                <p className="text-xs lg:text-sm text-gray-400 truncate">@noahwojciechowski</p>
+            </div>
+          </div>
+        </div>
+
+        {/* ==================== CARTE EXPÉRIENCE ==================== */}
+        <div className="group relative rounded-xl p-5 sm:p-6 bg-gradient-to-br from-gray-950/95 via-black/95 to-gray-950/95 backdrop-blur-sm border border-gray-700/50 hover:border-gray-500 transition-all duration-300 hover:shadow-lg hover:shadow-black/20 hover:-translate-y-1 sm:col-span-2">
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+          <div className="relative z-10">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-gray-700/50 group-hover:bg-gray-600/50 transition-colors">
+                <Image src="/icons/bento/briefcase.svg" alt="Icône expérience" width={20} height={20} className="brightness-0 invert" />
               </div>
-            </a>
-            {/* LinkedIn */}
-            <a
-              href={CONTACT_INFO.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-lg p-3 lg:p-4 transition-all hover:bg-gray-700/80 hover:scale-[1.02] border border-gray-700/50 lg:border-gray-700/30"
-              aria-label="Visiter le profil LinkedIn"
-            >
-              <div className="flex-shrink-0 w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center rounded-lg">
-                <Image src="/icons/contact/linkedin.svg" alt="LinkedIn" width={20} height={20} className="brightness-0 invert" />
+              <h3 className="text-lg sm:text-xl font-bold text-white">Expérience</h3>
+            </div>
+            <div className="text-sm text-gray-300 space-y-4">
+              {/* Stages */}
+              <div>
+                <p className="mb-2 font-semibold text-gray-200 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
+                  Stages professionnels
+                </p>
+                <div className="space-y-2 ml-3.5">
+                  {EXPERIENCES.filter((exp: ExperienceItem) => exp.type === "stage").map((exp: ExperienceItem, idx: number) => (
+                    <div key={idx} className="pl-3 border-l-2 border-gray-700 hover:border-gray-500 transition-colors">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <p className="font-medium text-white">{exp.title}</p>
+                        <span className="px-2 py-0.5 rounded text-xs bg-gray-700/50 text-gray-400">{exp.period}</span>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-1">{exp.description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-semibold text-gray-300 text-sm lg:text-base mb-0.5">LinkedIn</p>
-                <p className="text-xs lg:text-sm text-gray-400 truncate">noahwojciechowski</p>
+
+              {/* Projets */}
+              <div>
+                <p className="mb-2 font-semibold text-gray-200 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gray-400"></span>
+                  Projets récents
+                </p>
+                <div className="space-y-2 ml-3.5">
+                  {EXPERIENCES.filter((exp: ExperienceItem) => exp.type === "projet").map((exp: ExperienceItem, idx: number) => (
+                    <div key={idx} className="pl-3 border-l-2 border-gray-700 hover:border-gray-500 transition-colors">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <p className="font-medium text-white">{exp.title}</p>
+                        <span className="px-2 py-0.5 rounded text-xs bg-gray-700/50 text-gray-400">{exp.period}</span>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-1">{exp.description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 }
+

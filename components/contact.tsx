@@ -85,12 +85,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32">
-      <h2 className="text-center text-3xl font-bold">Contact</h2>
-      <div className="mx-auto mt-8 max-w-xl px-4">
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <section id="contact" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold">Contact</h2>
+      <div className="mx-auto mt-8 lg:mt-12 max-w-xl">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="mb-1 block text-sm">
+            <label htmlFor="name" className="mb-2 block text-sm sm:text-base font-medium">
               Nom
             </label>
             <Input
@@ -100,10 +100,11 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               disabled={loading}
+              className="text-sm sm:text-base h-11 sm:h-12"
             />
           </div>
           <div>
-            <label htmlFor="email" className="mb-1 block text-sm">
+            <label htmlFor="email" className="mb-2 block text-sm sm:text-base font-medium">
               Email
             </label>
             <Input
@@ -114,30 +115,32 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               disabled={loading}
+              className="text-sm sm:text-base h-11 sm:h-12"
             />
           </div>
           <div>
-            <label htmlFor="message" className="mb-1 block text-sm">
+            <label htmlFor="message" className="mb-2 block text-sm sm:text-base font-medium">
               Message
             </label>
             <Textarea
               id="message"
               required
-              rows={5}
+              rows={6}
               placeholder="Votre message"
               value={formData.message}
               onChange={handleChange}
               disabled={loading}
+              className="text-sm sm:text-base resize-none h-11 sm:h-20"
             />
           </div>
-          <Button type="submit" className="min-h-[44px] w-full" disabled={loading}>
+          <Button type="submit" className="w-full text-sm sm:text-base h-11 sm:h-12 font-medium" disabled={loading}>
             {loading ? "Envoi en cours..." : "Envoyer"}
           </Button>
 
           {/* Message de succès */}
           {status === "success" && (
-            <div className="rounded-md bg-green-500/10 border border-green-500/20 p-3">
-              <p className="text-sm text-green-400">
+            <div className="rounded-md bg-green-500/10 border border-green-500/20 p-3 sm:p-4">
+              <p className="text-sm sm:text-base text-green-400">
                 ✓ Message envoyé avec succès ! Je vous répondrai bientôt.
               </p>
             </div>
@@ -145,8 +148,8 @@ export default function Contact() {
 
           {/* Message d'erreur */}
           {status === "error" && (
-            <div className="rounded-md bg-red-500/10 border border-red-500/20 p-3">
-              <p className="text-sm text-red-400">
+            <div className="rounded-md bg-red-500/10 border border-red-500/20 p-3 sm:p-4">
+              <p className="text-sm sm:text-base text-red-400">
                 ✗ Erreur lors de l'envoi. Vérifiez la configuration EmailJS ou réessayez.
               </p>
             </div>

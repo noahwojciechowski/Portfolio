@@ -17,10 +17,10 @@ import { useEffect, useState, useRef } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useRevealAnimation } from "@/lib/hooks/useRevealAnimation";
 import { CONTACT_INFO } from "@/lib/data/about-data";
-import { Home, Code2, FolderOpen, User } from "lucide-react";
+import { Home, Code2, FolderOpen, User, Mail } from "lucide-react";
 import Image from "next/image";
 
-type NavKey = "home" | "skills" | "projects" | "about";
+type NavKey = "home" | "skills" | "projects" | "about" | "contact";
 
 interface NavItem {
   key: NavKey;
@@ -34,6 +34,7 @@ const NAV_ITEMS: NavItem[] = [
   { key: "skills", label: "Compétences", icon: Code2, href: "#skills" },
   { key: "projects", label: "Projets", icon: FolderOpen, href: "#projects" },
   { key: "about", label: "À propos", icon: User, href: "#about" },
+  { key: "contact", label: "Contact", icon: Mail, href: "#contact" },
 ];
 
 /**
@@ -181,8 +182,8 @@ export default function Navbar() {
                     onMouseLeave={() => setHoveredKey(null)}
                     aria-label={label}
                     className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${isActive
-                        ? "bg-primary text-primary-foreground scale-110 lg:scale-100 z-10"
-                        : "text-muted-foreground scale-90 lg:scale-100"
+                      ? "bg-primary text-primary-foreground scale-110 lg:scale-100 z-10"
+                      : "text-muted-foreground scale-90 lg:scale-100"
                       } ${hoveredKey === key
                         ? "lg:scale-125 lg:bg-accent/80 lg:shadow-lg lg:-translate-y-0.5 lg:z-10"
                         : hoveredKey && hoveredKey !== key
@@ -212,10 +213,10 @@ export default function Navbar() {
                 onMouseEnter={() => setHoveredKey("github")}
                 onMouseLeave={() => setHoveredKey(null)}
                 className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${hoveredKey === "github"
-                    ? "scale-125 bg-accent/80 shadow-lg -translate-y-0.5 z-10"
-                    : hoveredKey && hoveredKey !== "github"
-                      ? "opacity-50 scale-95"
-                      : "hover:bg-accent hover:scale-105"
+                  ? "scale-125 bg-accent/80 shadow-lg -translate-y-0.5 z-10"
+                  : hoveredKey && hoveredKey !== "github"
+                    ? "opacity-50 scale-95"
+                    : "hover:bg-accent hover:scale-105"
                   }`}
               >
                 <Image src="/icons/contact/github.svg" alt="GitHub" width={20} height={20} className="brightness-0 invert" />
@@ -234,10 +235,10 @@ export default function Navbar() {
                 onMouseEnter={() => setHoveredKey("linkedin")}
                 onMouseLeave={() => setHoveredKey(null)}
                 className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${hoveredKey === "linkedin"
-                    ? "scale-125 bg-accent/80 shadow-lg -translate-y-0.5 z-10"
-                    : hoveredKey && hoveredKey !== "linkedin"
-                      ? "opacity-50 scale-95"
-                      : "hover:bg-accent hover:scale-105"
+                  ? "scale-125 bg-accent/80 shadow-lg -translate-y-0.5 z-10"
+                  : hoveredKey && hoveredKey !== "linkedin"
+                    ? "opacity-50 scale-95"
+                    : "hover:bg-accent hover:scale-105"
                   }`}
               >
                 <Image src="/icons/contact/linkedin.svg" alt="LinkedIn" width={20} height={20} className="brightness-0 invert" />

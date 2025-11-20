@@ -255,8 +255,8 @@ export default function Projects() {
             onClick={scrollPrev}
             disabled={!canScrollPrev}
             className={`hidden lg:flex absolute -left-16 top-1/2 -translate-y-1/2 rounded-full backdrop-blur-sm p-3 shadow-lg transition-colors min-h-[44px] min-w-[44px] items-center justify-center ${canScrollPrev
-                ? "bg-white/10 hover:bg-white/20 cursor-pointer"
-                : "bg-white/5 cursor-not-allowed opacity-50"
+              ? "bg-white/10 hover:bg-white/20 cursor-pointer"
+              : "bg-white/5 cursor-not-allowed opacity-50"
               }`}
           >
             <ChevronLeft className="h-6 w-6 text-white" />
@@ -266,8 +266,8 @@ export default function Projects() {
             onClick={scrollNext}
             disabled={!canScrollNext}
             className={`hidden lg:flex absolute -right-16 top-1/2 -translate-y-1/2 rounded-full backdrop-blur-sm p-3 shadow-lg transition-colors min-h-[44px] min-w-[44px] items-center justify-center ${canScrollNext
-                ? "bg-white/10 hover:bg-white/20 cursor-pointer"
-                : "bg-white/5 cursor-not-allowed opacity-50"
+              ? "bg-white/10 hover:bg-white/20 cursor-pointer"
+              : "bg-white/5 cursor-not-allowed opacity-50"
               }`}
           >
             <ChevronRight className="h-6 w-6 text-white" />
