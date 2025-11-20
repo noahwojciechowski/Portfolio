@@ -17,7 +17,7 @@ import Skills from "@/components/skills";
 import Projects from "@/components/projects";
 import About from "@/components/about";
 
-const CV_PATH = "/CV_Noah_WOJCIECHOWSKI_Dev_Web.pdf";
+const CV_PATH = "/cv-livecampus-noah-wojciechowski.pdf";
 
 export default function Home() {
   return (

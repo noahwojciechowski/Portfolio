@@ -27,7 +27,7 @@ export const TERMINAL_COMMANDS: Record<string, TerminalCommand> = {
   experience: {
     description: "Expériences professionnelles et projets",
     output:
-      "Voici les différentes experiences professionnelles et projets réalisés durant mes études:\n  - [Stage]: ASI Informatique (2024) - Maintenance informatique et réseaux\n  - [Stage]: Atlantique Habitation (2021) - Maintenance informatique sur du matériel informatique de l'entreprise\n  - [Projet 1]: Site e-commerce avec Next.js\n  - [Projet 2]: Application web React + TypeScript",
+      "Voici les différentes experiences professionnelles et projets réalisés durant mes études:\n  - [Stage]: ASI Informatique (2024) - Maintenance informatique et réseaux\n  - [Stage]: Atlantique Habitation (2021) - Maintenance informatique sur du matériel informatique de l'entreprise\n  - [Projet]: Nami Kumo - Site web restaurant japonais avec système de réservation (React 19, TypeScript)\n  - [Projet]: QuizMaster - Bot Discord de quiz quotidiens interactifs (JavaScript, Discord.js)\n  - [Projet]: TechVault - Site e-commerce Tech & Gaming (React, Next.js)\n  - [Projet]: Portfolio Personnel - Portfolio moderne avec Next.js",
   },
   skills: {
     description: "Technologies maîtrisées",

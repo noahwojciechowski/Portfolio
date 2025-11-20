@@ -113,8 +113,6 @@ function useActiveSection() {
   useEffect(() => {
     if (!observerRef.current) return;
 
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-
     const handleScroll = () => {
       if (!hasScrolledRef.current && observerRef.current) {
         hasScrolledRef.current = true;
@@ -165,9 +163,8 @@ export default function Navbar() {
 
   return (
     <div
-      className={`pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center transition-all duration-700 ease-out ${
-        isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }`}
+      className={`pointer-events-none fixed inset-x-0 bottom-4 z-50 flex justify-center transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
     >
       <div className="pointer-events-auto flex items-center gap-3 rounded-2xl border bg-background/60 px-3 py-2 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out hover:scale-x-105">
         <TooltipProvider delayDuration={700}>
@@ -183,17 +180,15 @@ export default function Navbar() {
                     onMouseEnter={() => setHoveredKey(key)}
                     onMouseLeave={() => setHoveredKey(null)}
                     aria-label={label}
-                    className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${
-                      isActive
+                    className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${isActive
                         ? "bg-primary text-primary-foreground scale-110 lg:scale-100 z-10"
                         : "text-muted-foreground scale-90 lg:scale-100"
-                    } ${
-                      hoveredKey === key
+                      } ${hoveredKey === key
                         ? "lg:scale-125 lg:bg-accent/80 lg:shadow-lg lg:-translate-y-0.5 lg:z-10"
                         : hoveredKey && hoveredKey !== key
                           ? "lg:opacity-50 lg:scale-95"
                           : "lg:hover:bg-accent lg:hover:scale-105"
-                    }`}
+                      }`}
                   >
                     <Icon className="h-5 w-5" />
                   </a>
@@ -216,13 +211,12 @@ export default function Navbar() {
                 aria-label="GitHub"
                 onMouseEnter={() => setHoveredKey("github")}
                 onMouseLeave={() => setHoveredKey(null)}
-                className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${
-                  hoveredKey === "github"
+                className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${hoveredKey === "github"
                     ? "scale-125 bg-accent/80 shadow-lg -translate-y-0.5 z-10"
                     : hoveredKey && hoveredKey !== "github"
                       ? "opacity-50 scale-95"
                       : "hover:bg-accent hover:scale-105"
-                }`}
+                  }`}
               >
                 <Image src="/icons/contact/github.svg" alt="GitHub" width={20} height={20} className="brightness-0 invert" />
               </a>
@@ -239,13 +233,12 @@ export default function Navbar() {
                 aria-label="LinkedIn"
                 onMouseEnter={() => setHoveredKey("linkedin")}
                 onMouseLeave={() => setHoveredKey(null)}
-                className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${
-                  hoveredKey === "linkedin"
+                className={`inline-flex h-10 w-10 items-center justify-center rounded-md transition-all duration-300 ease-out ${hoveredKey === "linkedin"
                     ? "scale-125 bg-accent/80 shadow-lg -translate-y-0.5 z-10"
                     : hoveredKey && hoveredKey !== "linkedin"
                       ? "opacity-50 scale-95"
                       : "hover:bg-accent hover:scale-105"
-                }`}
+                  }`}
               >
                 <Image src="/icons/contact/linkedin.svg" alt="LinkedIn" width={20} height={20} className="brightness-0 invert" />
               </a>

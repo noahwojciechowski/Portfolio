@@ -20,6 +20,61 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Nami Kumo",
+    description: "Site web moderne pour un restaurant japonais offrant une expérience de réservation en ligne et consultation du menu.",
+    image: "/preview/nami-kumo-preview-v3.png",
+    technologies: ["React 19", "TypeScript", "Tailwind CSS"],
+    features: ["Système de réservation en ligne", "Menu interactif avec photos", "Design responsive", "Interface utilisateur élégante", "Formulaire de contact"],
+    githubUrl: "https://github.com/noahwojciechowski/nami-kumo",
+    liveUrl: "https://nami-kumo.netlify.app",
+    technicalDetails: {
+      architecture: [
+        "Application React 19 avec dernières fonctionnalités",
+        "TypeScript pour la sécurité du code",
+        "Gestion d'état moderne avec React Hooks",
+        "Design system cohérent avec Tailwind CSS",
+      ],
+      highlights: [
+        "Interface utilisateur immersive et élégante",
+        "Système de réservation intuitif",
+        "Performance optimisée pour mobile",
+        "Design responsive et accessible",
+      ],
+      challenges: [
+        "Intégration d'un système de réservation complet",
+        "Design cohérent avec l'identité de la marque",
+        "Optimisation des images pour performance",
+      ],
+    },
+  },
+  {
+    title: "QuizMaster",
+    description: "Bot Discord interactif proposant des quiz quotidiens permettant aux membres de voter pour leurs amis.",
+    image: "/preview/quizmaster-preview-v2.jpg",
+    technologies: ["JavaScript", "Discord.js", "Node.js"],
+    features: ["Quiz quotidiens automatiques", "Système de vote interactif", "Questions personnalisables", "Engagement communautaire", "Statistiques des participants"],
+    githubUrl: "https://github.com/noahwojciechowski/QuizMaster",
+    technicalDetails: {
+      architecture: [
+        "Bot Discord avec Discord.js",
+        "Système de scheduling pour quiz quotidiens",
+        "Base de données pour stocker les réponses",
+        "Gestion des interactions utilisateur",
+      ],
+      highlights: [
+        "Quiz automatiques chaque jour",
+        "Interface de vote intuitive via Discord",
+        "Engagement actif de la communauté",
+        "Personnalisation des questions",
+      ],
+      challenges: [
+        "Gestion des interactions asynchrones Discord",
+        "Système de vote équitable et transparent",
+        "Automatisation fiable des quiz quotidiens",
+      ],
+    },
+  },
+  {
     title: "TechVault",
     description: "Application e-commerce moderne spécialisée dans la vente de produits Tech & Gaming",
     image: "/preview/techvault-preview2.jpg",

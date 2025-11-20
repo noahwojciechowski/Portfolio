@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import Image from "next/image";
 import { useRevealAnimation } from "@/lib/hooks/useRevealAnimation";
-import { projects } from "@/lib/data";
+import { projects } from "@/lib/data/projects";
 
 export default function Projects() {
   const isMounted = useRevealAnimation();
@@ -79,18 +79,16 @@ export default function Projects() {
     <section id="projects" className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
       {/* ==================== TITLE ==================== */}
       <h2
-        className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold transition-all duration-700 ease-out ${
-          isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-        }`}
+        className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+          }`}
       >
         Projets
       </h2>
 
       {/* ==================== CAROUSEL ==================== */}
       <div
-        className={`mx-auto mt-8 lg:mt-12 max-w-7xl transition-all duration-700 ease-out ${
-          isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-        } delay-150`}
+        className={`mx-auto mt-8 lg:mt-12 max-w-7xl transition-all duration-700 ease-out ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+          } delay-150`}
       >
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
@@ -256,11 +254,10 @@ export default function Projects() {
             aria-label="Projet précédent"
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className={`hidden lg:flex absolute -left-16 top-1/2 -translate-y-1/2 rounded-full backdrop-blur-sm p-3 shadow-lg transition-colors min-h-[44px] min-w-[44px] items-center justify-center ${
-              canScrollPrev
+            className={`hidden lg:flex absolute -left-16 top-1/2 -translate-y-1/2 rounded-full backdrop-blur-sm p-3 shadow-lg transition-colors min-h-[44px] min-w-[44px] items-center justify-center ${canScrollPrev
                 ? "bg-white/10 hover:bg-white/20 cursor-pointer"
                 : "bg-white/5 cursor-not-allowed opacity-50"
-            }`}
+              }`}
           >
             <ChevronLeft className="h-6 w-6 text-white" />
           </button>
@@ -268,11 +265,10 @@ export default function Projects() {
             aria-label="Projet suivant"
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className={`hidden lg:flex absolute -right-16 top-1/2 -translate-y-1/2 rounded-full backdrop-blur-sm p-3 shadow-lg transition-colors min-h-[44px] min-w-[44px] items-center justify-center ${
-              canScrollNext
+            className={`hidden lg:flex absolute -right-16 top-1/2 -translate-y-1/2 rounded-full backdrop-blur-sm p-3 shadow-lg transition-colors min-h-[44px] min-w-[44px] items-center justify-center ${canScrollNext
                 ? "bg-white/10 hover:bg-white/20 cursor-pointer"
                 : "bg-white/5 cursor-not-allowed opacity-50"
-            }`}
+              }`}
           >
             <ChevronRight className="h-6 w-6 text-white" />
           </button>

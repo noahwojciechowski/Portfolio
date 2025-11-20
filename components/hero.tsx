@@ -18,7 +18,7 @@ import { ArrowRight, Download } from "lucide-react";
 import { CONTACT_INFO } from "@/lib/data/about-data";
 import Image from "next/image";
 
-const CV_PATH = "/CV_Noah_WOJCIECHOWSKI_Dev_Web.pdf";
+const CV_PATH = "/cv-livecampus-noah-wojciechowski.pdf";
 
 /**
  * Gère le scroll vers une section spécifique de la page
@@ -46,18 +46,16 @@ export default function Hero() {
           <div className="flex flex-col justify-center text-center lg:text-left w-full lg:w-auto">
             {/* Titre principal */}
             <div
-              className={`transition-all duration-700 ease-out will-change-transform ${
-                isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-              }`}
+              className={`transition-all duration-700 ease-out will-change-transform ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                }`}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                 <span className="mr-2">👋 Je suis</span>
                 <span className="text-cyan-400 block sm:inline">Noah Wojciechowski</span>
               </h1>
               <p
-                className={`mt-2 text-3xl sm:text-4xl lg:text-4xl font-extrabold text-white transition-all duration-700 ease-out will-change-transform ${
-                  isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-                } delay-100`}
+                className={`mt-2 text-3xl sm:text-4xl lg:text-4xl font-extrabold text-white transition-all duration-700 ease-out will-change-transform ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                  } delay-100`}
               >
                 Développeur web junior
               </p>
@@ -65,9 +63,8 @@ export default function Hero() {
 
             {/* Boutons d'action */}
             <div
-              className={`mt-6 lg:mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start transition-all duration-700 ease-out will-change-transform ${
-                isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
-              } delay-200`}
+              className={`mt-6 lg:mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start transition-all duration-700 ease-out will-change-transform ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                } delay-200`}
             >
               <Button
                 onClick={() => scrollToSection("#projects")}
@@ -90,9 +87,8 @@ export default function Hero() {
 
             {/* Liens réseaux sociaux */}
             <div
-              className={`mt-6 flex items-center gap-4 justify-center lg:justify-start transition-all duration-700 ease-out will-change-transform ${
-                isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-              } delay-300`}
+              className={`mt-6 flex items-center gap-4 justify-center lg:justify-start transition-all duration-700 ease-out will-change-transform ${isMounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                } delay-300`}
             >
               <Button asChild variant="outline" size="icon" aria-label="GitHub" className="min-h-[44px] min-w-[44px]">
                 <a href={CONTACT_INFO.github} target="_blank" rel="noopener noreferrer">
@@ -109,9 +105,8 @@ export default function Hero() {
 
           {/* ==================== RIGHT COLUMN: AVATAR PLACEHOLDER ==================== */}
           <div
-            className={`relative hidden md:flex items-center justify-center lg:justify-end transition-all duration-700 ease-out will-change-transform ${
-              isMounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-3 scale-[0.98]"
-            } delay-200`}
+            className={`relative hidden md:flex items-center justify-center lg:justify-end transition-all duration-700 ease-out will-change-transform ${isMounted ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-3 scale-[0.98]"
+              } delay-200`}
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-500/20 via-cyan-500/20 to-cyan-500/20 blur-2xl" />
             <div className="relative rounded-full p-[4px] bg-gradient-to-tr from-cyan-500 via-cyan-500 to-cyan-500">
