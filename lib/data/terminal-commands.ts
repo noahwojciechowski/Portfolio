@@ -236,12 +236,8 @@ export const TERMINAL_COMMANDS: Record<string, TerminalCommand> = {
 export const INITIAL_TERMINAL_MESSAGE = React.createElement(
   "div",
   { className: "space-y-2" },
-  React.createElement("div", { className: "text-cyan-400 font-mono text-sm" }, "╭────────────────────────────────────────────╮"),
-  React.createElement("div", { className: "text-cyan-400 font-mono text-sm" }, "│   Portfolio de Noah - Terminal v2.0     │"),
-  React.createElement("div", { className: "text-cyan-400 font-mono text-sm" }, "╰────────────────────────────────────────────╯"),
-  React.createElement("div", { className: "mt-2 text-gray-300" }, "Salut ! Je suis Noah, développeur passionné."),
+  React.createElement("div", { className: "mt-2 text-gray-300" }, "Bonjour ! Je suis Noah, développeur passionné."),
   React.createElement("div", { className: "mt-3 space-y-1 text-gray-400 text-sm" },
     React.createElement("div", null, "Tapez 'help' pour voir les commandes"),
   ),
-  React.createElement("div", { className: "text-green-400 text-xs mt-2" }, "Fun fact: Ce terminal est codé en React !")
 );
